@@ -20,8 +20,8 @@ Let's move on to **A1** now. A quick glance at it reveals to us that there's a c
 ![Screen-shot](https://github.com/angad-k/Reversing-Challenge/blob/master/Screenshot%20from%202020-03-19%2022-52-05.png) <br>
 It can be seen that it calls a puts procedure and then exits. So, the puts function basically prints some string to the screen and in this case, it prints "wrong key, try again :/". <br>
 There are three such blocks in the program which call the sorry-bro procedure. We'll call these blocks "sorrybrocallers". So, our basic task will be avoiding passing into these blocks and passing all the conditions for the jump statements.<br>
-Okay, so what did we learn from this A1 block? Length matters. And it's not like everyday life where the societal expectation is just a lower limit. Here, we require the length to be 5 and only 5.
-**A1 checks whether length of the given string is 5.**
+Okay, so what did we learn from this A1 block? Length matters. And it's not like everyday life where the societal expectation is just a lower limit. Here, we require the length to be 5 and only 5.<br>
+**A1 checks whether length of the given string is 5.**<br>
 Okay, let's move to **A2** now. After all of those mov statements, what catches the eye is the compare where al register's contents are compared with 0x40. 0x40 is the ASCII code for **@**. Running the program with "@@@@@" helps us pass that jump. But there must be the restriction of being equal to @ on only one character of the string. To find out which is that, we run the program with "@aaaa" and "aaaa@" because intuitively that character might be at the start or the end. And you know what happens?<br>
 *drumroll*<br>
 *more drumroll*<br>
